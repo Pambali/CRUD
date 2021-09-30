@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+         CRUD 
+    </title>
+    <link rel="stylesheet" href="crud.css">
+</head>
+
+<body>
+    <table>
+        
+        <tr>
+            <td>
+                <h3>Student Detail Form</h3>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input type="number" name="age" id="age">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Gender:</label>
+                        <input type="radio" name="gender" id="gender" value="female">:Female
+                        <input type="radio" name="gender" id="gender" value="male">:Male
+                    </div>
+                    <br>
+                    <div>
+                        <label>Hobbies</label>
+                        <br>
+                        <select  type="text" class="hobbies" id="hobbies">  
+                            <option value=" ">Select</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="singing">singing</option>
+                            <option value="Dancing">Dancing</option>
+                            <option value="vollyball">Vollyball</option>
+                        </select>
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <h3> Student Details</h3>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Hobbies</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="crud.js"></script>
+</body>
+
+</html>
