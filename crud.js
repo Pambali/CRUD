@@ -17,7 +17,7 @@ function readFormData() {
     formData["age"] = document.getElementById("age").value;
     var  female=document.getElementById("female").checked;
     var  male=document.getElementById("male").checked;
-           if(male==true|| female==true)
+           if(male=="0"|| female=="0")
                 formData["gender"]=document.querySelector('[name="gender"]:checked').value;
          else
            formData["gender"]="-";
@@ -28,13 +28,13 @@ function readFormData() {
 function insertNewRecord(data) {
     var table = document.getElementById("student list").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
+    let cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.fullName;
-    cell2 = newRow.insertCell(1);
+    let cell2 = newRow.insertCell(1);
     cell2.innerHTML = data.age;
-    cell3 = newRow.insertCell(2);
+    let cell3 = newRow.insertCell(2);
     cell3.innerHTML = data.gender;
-    cell4 = newRow.insertCell(3);
+    let cell4 = newRow.insertCell(3);
     cell4.innerHTML = data.hobbies;
     cell4 = newRow.insertCell(4);
     cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
@@ -66,13 +66,13 @@ function updateRecord(formData) {
 
 function onDelete(td) {
         
-        row = td.parentElement.parentElement;
+        let row = td.parentElement.parentElement;
         document.getElementById("student list").deleteRow(row.rowIndex);
         resetForm();
 
 }
 function validate() {
-    isValid = true;
+    let isValid = true;
     if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
