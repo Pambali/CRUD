@@ -72,7 +72,7 @@ function onDelete(td) {
 
 }
 function validate() {
-    let isValid = true;
+    let isValid;
     if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
